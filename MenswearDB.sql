@@ -13,6 +13,9 @@ create table Sellers(
 insert into Sellers(seller_name, user_name, user_pass) values 
 					('Bo doi', 'admin2002', '2472edb1a3628b9f17107fac9ab81825');
 					-- pass : PF13VTCAcademy
+
+create user if not exists 'admin'@'localhost' identified by 'admin2002';
+grant all on MenswearDB.* to 'admin'@'localhost';
                     
 create table Categories(
 	category_id int auto_increment primary key,

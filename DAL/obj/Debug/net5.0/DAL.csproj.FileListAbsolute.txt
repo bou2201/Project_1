@@ -1,0 +1,15 @@
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\DAL.deps.json
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\DAL.dll
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\ref\DAL.dll
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\DAL.pdb
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\Persistence.dll
+D:\PROJECT1\Project_1\DAL\bin\Debug\net5.0\Persistence.pdb
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.csprojAssemblyReference.cache
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.dll
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\ref\DAL.dll
+D:\PROJECT1\Project_1\DAL\obj\Debug\net5.0\DAL.pdb
