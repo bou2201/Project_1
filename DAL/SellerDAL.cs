@@ -6,34 +6,34 @@ namespace DAL
 {
     public class SellerDAL
     {
-        public int Login(Seller seller)
+        MySqlConnection connection = DbHelper.GetConnection();
+        public bool Login(Seller seller)
         {
-            int login = 0;
-            try
+            bool check = false;
+            lock (connection)
             {
-                MySqlConnection connection = DbHelper.GetConnection();
-                connection.Open();
-                MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "select * from Sellers where user_name='" + 
-                    seller.Username + "' and user_pass='" + 
-                    Md5Algorithms.CreateMD5(seller.Password) + "';";
-                MySqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                try
                 {
-                    login = 1;
+                    connection.Open();
+                    MySqlCommand command = connection.CreateCommand();
+                    command.CommandText = "select * from Sellers where user_name='" +
+                        seller.Username + "' and user_pass='" +
+                        Md5Algorithms.CreateMD5(seller.Password) + "';";
+                    MySqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        check = true;
+                    }
+                    reader.Close();
+                    connection.Close();
+                    
                 }
-                else
+                catch
                 {
-                    login = 0;
+                    check = false;
                 }
-                reader.Close();
-                connection.Close();
             }
-            catch
-            {
-                login = -1;
-            }
-            return login;
+            return check;
         }
     }
 }

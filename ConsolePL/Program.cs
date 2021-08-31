@@ -13,11 +13,11 @@ namespace ConsoleAppPL
             Console.Write("Password: ");
             string pass = GetPassword();
             Console.WriteLine();
-            //valid username password here
+            
             Seller seller = new Seller() { Username = userName, Password = pass };
             SellerBL bl = new SellerBL();
-            int login = bl.Login(seller);
-            if (login <= 0)
+            bool login = bl.Login(seller);
+            if (login == false)
             {
                 Console.WriteLine("Can't Login");
             }

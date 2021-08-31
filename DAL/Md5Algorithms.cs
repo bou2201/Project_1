@@ -3,8 +3,9 @@ using System.Text;
 
 namespace DAL
 {
-    public class Md5Algorithms{
-      public static string CreateMD5(string input)
+    public class Md5Algorithms
+    {
+        public static string CreateMD5(string input)
         {
             using (var provider = System.Security.Cryptography.MD5.Create())
             {
