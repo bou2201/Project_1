@@ -23,7 +23,8 @@ namespace ConsoleAppPL
             }
             else
             {
-                Console.WriteLine("Wellcome to System...");
+                Console.WriteLine("Logged in");
+                Menu.LoginMenu();
             }
         }
 
@@ -48,6 +49,6 @@ namespace ConsoleAppPL
                 }
             } while (key != ConsoleKey.Enter);
             return pass;
-        }
+        }       
     }
 }

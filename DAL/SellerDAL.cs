@@ -25,8 +25,7 @@ namespace DAL
                         check = true;
                     }
                     reader.Close();
-                    connection.Close();
-                    
+                    connection.Close();                   
                 }
                 catch
                 {
