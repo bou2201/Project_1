@@ -6,7 +6,7 @@ namespace DAL
 {
     public class SellerDAL
     {
-        MySqlConnection connection = DbHelper.GetConnection();
+        MySqlConnection connection = DbConfig.GetConnection();
         public bool Login(Seller seller)
         {
             bool check = false;

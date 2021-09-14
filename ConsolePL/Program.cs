@@ -8,23 +8,52 @@ namespace ConsoleAppPL
     {
         static void Main(string[] args)
         {
-            Console.Write("Username: ");
-            string userName = Console.ReadLine();
-            Console.Write("Password: ");
-            string pass = GetPassword();
-            Console.WriteLine();
-            
-            Seller seller = new Seller() { Username = userName, Password = pass };
+            Seller seller = new Seller();
             SellerBL bl = new SellerBL();
-            bool login = bl.Login(seller);
-            if (login == false)
+            while (true)
             {
-                Console.WriteLine("Can't Login");
-            }
-            else
-            {
-                Console.WriteLine("Logged in");
-                Menu.LoginMenu();
+                Menu.GetLineDash();
+                Console.WriteLine("|\t\t LOGIN\t\t\t|");
+                Menu.GetLineDash();
+                Console.Write("Username: ");
+                seller.Username = Console.ReadLine();
+                Console.Write("Password: ");
+                seller.Password = GetPassword();
+                Console.WriteLine();
+                bool login = bl.Login(seller);
+                string input;
+
+                if (login == false)
+                {
+                    Menu.GetLineDash();
+                    Console.WriteLine("INVALID USERNAME OR PASSWORD !");
+                    while (true)
+                    {
+                        Console.Write("Input 1 to continue re-enter or input 0 to exit: ");
+                        input = Console.ReadLine();
+                        switch (input)
+                        {
+                            case "1": 
+                                break;
+                            case "0": 
+                                return;
+                            default:
+                                Console.WriteLine("Invalid choice !");
+                                break;
+                        }
+                        if (input == "1")
+                        {
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Menu.GetLineDash();
+                    Console.WriteLine("LOGIN TO THE SYSTEM SUCCESSFULLY !");
+                    Menu.MainMenu();
+                    return;
+                }
             }
         }
 
@@ -49,6 +78,6 @@ namespace ConsoleAppPL
                 }
             } while (key != ConsoleKey.Enter);
             return pass;
-        }       
+        }
     }
 }
