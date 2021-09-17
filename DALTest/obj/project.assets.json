@@ -6435,11 +6435,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJECT1\\Project_1\\DALTest\\DALTest.csproj",
+      "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj",
       "projectName": "DALTest",
-      "projectPath": "D:\\PROJECT1\\Project_1\\DALTest\\DALTest.csproj",
+      "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJECT1\\Project_1\\DALTest\\obj\\",
+      "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6454,11 +6454,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\PROJECT1\\Project_1\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\PROJECT1\\Project_1\\DAL\\DAL.csproj"
+            "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj"
             },
-            "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj"
+            "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj": {
+              "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj"
             }
           }
         }

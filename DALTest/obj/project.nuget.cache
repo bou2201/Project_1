@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gxQjxM+sFCA/FavZv8KEA6OVSvwcqfQ+2rGZ7jWSa5AXyzmvgZzGa5sOTkYRBDQ/ySltEBihUAVtdOk32mr2Lg==",
+  "dgSpecHash": "KVJHFLE752JaPGYCTj1Yn6VuOPMyW0NvGJO5UBNbYD0BJhKiexmyFrbEJEeLJhGpUP6CD0QvNnujU+DxKq1fqw==",
   "success": true,
-  "projectFilePath": "D:\\PROJECT1\\Project_1\\DALTest\\DALTest.csproj",
+  "projectFilePath": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
