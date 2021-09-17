@@ -893,19 +893,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "/Users/namhainam2002/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJECT1\\Project_1\\ConsolePL\\ConsolePL.csproj",
+      "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj",
       "projectName": "ConsolePL",
-      "projectPath": "D:\\PROJECT1\\Project_1\\ConsolePL\\ConsolePL.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJECT1\\Project_1\\ConsolePL\\obj\\",
+      "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj",
+      "packagesPath": "/Users/namhainam2002/.nuget/packages/",
+      "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -917,11 +917,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\PROJECT1\\Project_1\\BL\\BL.csproj": {
-              "projectPath": "D:\\PROJECT1\\Project_1\\BL\\BL.csproj"
+            "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj": {
+              "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj"
             },
-            "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj"
+            "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
+              "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj"
             }
           }
         }
@@ -950,7 +950,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

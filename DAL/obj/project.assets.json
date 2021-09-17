@@ -855,19 +855,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "/Users/namhainam2002/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJECT1\\Project_1\\DAL\\DAL.csproj",
+      "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\PROJECT1\\Project_1\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJECT1\\Project_1\\DAL\\obj\\",
+      "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj",
+      "packagesPath": "/Users/namhainam2002/.nuget/packages/",
+      "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -879,8 +879,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\PROJECT1\\Project_1\\Persistence\\Persistence.csproj"
+            "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
+              "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj"
             }
           }
         }
@@ -915,7 +915,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
