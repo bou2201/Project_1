@@ -6,6 +6,6 @@ namespace Persistence
     {
         public int CustomerID {set; get;}
         public string CustomerName {set; get;}
-        public int PhoneNumber {set; get;}
+        public string PhoneNumber {set; get;}
     }
 }

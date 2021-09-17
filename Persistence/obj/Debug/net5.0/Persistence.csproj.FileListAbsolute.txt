@@ -22,3 +22,15 @@ D:/PROJECT1/Project_1/Persistence/obj/Debug/net5.0/Persistence.pdb
 /Users/namhainam2002/Desktop/project221/Project_1/Persistence/obj/Debug/net5.0/Persistence.dll
 /Users/namhainam2002/Desktop/project221/Project_1/Persistence/obj/Debug/net5.0/ref/Persistence.dll
 /Users/namhainam2002/Desktop/project221/Project_1/Persistence/obj/Debug/net5.0/Persistence.pdb
+D:\PROJECT1\PRO1\Project_1\Persistence\bin\Debug\net5.0\Persistence.deps.json
+D:\PROJECT1\PRO1\Project_1\Persistence\bin\Debug\net5.0\Persistence.dll
+D:\PROJECT1\PRO1\Project_1\Persistence\bin\Debug\net5.0\ref\Persistence.dll
+D:\PROJECT1\PRO1\Project_1\Persistence\bin\Debug\net5.0\Persistence.pdb
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.csprojAssemblyReference.cache
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfoInputs.cache
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfo.cs
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.csproj.CoreCompileInputs.cache
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.dll
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\ref\Persistence.dll
+D:\PROJECT1\PRO1\Project_1\Persistence\obj\Debug\net5.0\Persistence.pdb

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj": {}
+    "D:\\PROJECT1\\PRO1\\Project_1\\ConsolePL\\ConsolePL.csproj": {}
   },
   "projects": {
-    "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj": {
+    "D:\\PROJECT1\\PRO1\\Project_1\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj",
+        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj",
-        "packagesPath": "/Users/namhainam2002/.nuget/packages/",
-        "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/BL/obj/",
+        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\BL\\BL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -26,11 +26,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj": {
-                "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj"
+              "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj"
               },
-              "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
-                "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj"
+              "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -59,21 +59,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj": {
+    "D:\\PROJECT1\\PRO1\\Project_1\\ConsolePL\\ConsolePL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj",
+        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\ConsolePL\\ConsolePL.csproj",
         "projectName": "ConsolePL",
-        "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/ConsolePL.csproj",
-        "packagesPath": "/Users/namhainam2002/.nuget/packages/",
-        "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/ConsolePL/obj/",
+        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\ConsolePL\\ConsolePL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\ConsolePL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -85,11 +85,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj": {
-                "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/BL/BL.csproj"
+              "D:\\PROJECT1\\PRO1\\Project_1\\BL\\BL.csproj": {
+                "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\BL\\BL.csproj"
               },
-              "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
-                "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj"
+              "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -118,21 +118,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj": {
+    "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj",
+        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/DAL.csproj",
-        "packagesPath": "/Users/namhainam2002/.nuget/packages/",
-        "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/DAL/obj/",
+        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -144,8 +144,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
-                "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj"
+              "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -180,21 +180,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj": {
+    "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj",
+        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/Persistence.csproj",
-        "packagesPath": "/Users/namhainam2002/.nuget/packages/",
-        "outputPath": "/Users/namhainam2002/Desktop/project221/Project_1/Persistence/obj/",
+        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/namhainam2002/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -232,7 +232,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

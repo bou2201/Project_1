@@ -4,7 +4,7 @@ namespace DAL
 {
     public class DbConfig
     {
-        private static MySqlConnection connection = new MySqlConnection();
+        private static MySqlConnection connection;
         private DbConfig() { }
         public static MySqlConnection GetDefaultConnection()
         {
@@ -34,7 +34,10 @@ namespace DAL
 
         public static MySqlConnection GetConnection(string connectionString)
         {
-            connection.ConnectionString = connectionString;
+            if(connection == null)
+            {
+                connection = new MySqlConnection() {ConnectionString = connectionString};
+            }
             return connection;
         }
     }
