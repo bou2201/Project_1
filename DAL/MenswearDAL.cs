@@ -18,26 +18,29 @@ namespace DAL
         public Menswear SearchByID(int menswearID)
         {
             Menswear menswear = null;
-            try
+            lock (connection)
             {
-                connection.Open();
-                query = @"select menswear_id, menswear_name, ifnull(menswear_description, '') as menswear_description,
+                try
+                {
+                    connection.Open();
+                    query = @"select menswear_id, menswear_name, ifnull(menswear_description, '') as menswear_description,
                         menswear_brand, menswear_material, menswear_price, category_id
                         from Menswears where menswear_id=@menswearID;";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@menswearID", menswearID);
-                MySqlDataReader reader = command.ExecuteReader();
-                var readerRead = reader.Read();
-                if (readerRead)
-                {
-                    menswear = GetMenswear(reader);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@menswearID", menswearID);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    var readerRead = reader.Read();
+                    if (readerRead)
+                    {
+                        menswear = GetMenswear(reader);
+                    }
+                    reader.Close();
                 }
-                reader.Close();
-            }
-            catch {}
-            finally
-            {
-                connection.Close();
+                catch { }
+                finally
+                {
+                    connection.Close();
+                }
             }
             return menswear;
         }
@@ -57,38 +60,41 @@ namespace DAL
         public List<Menswear> SearchByName(int menswearFilter, Menswear menswear)
         {
             List<Menswear> menswears = null;
-            try
+            lock (connection)
             {
-                connection.Open();
-                MySqlCommand command = new MySqlCommand("", connection);
-                switch (menswearFilter)
+                try
                 {
-                    case MenswearFilter.GET_ALL:
-                        query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand("", connection);
+                    switch (menswearFilter)
+                    {
+                        case MenswearFilter.GET_ALL:
+                            query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,
                                 ifnull(menswear_description, '') as menswear_description
                                 from Menswears";
-                        break;
-                    case MenswearFilter.FILTER_BY_NAME:
-                        query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,
+                            break;
+                        case MenswearFilter.FILTER_BY_NAME:
+                            query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,
                                 ifnull(menswear_description, '') as menswear_description from Menswears
                                 where menswear_name like concat('%',@menswearID,'%');";
-                        command.Parameters.AddWithValue("@menswearID", menswear.MenswearName);
-                        break;
+                            command.Parameters.AddWithValue("@menswearID", menswear.MenswearName);
+                            break;
+                    }
+                    command.CommandText = query;
+                    MySqlDataReader reader = command.ExecuteReader();
+                    menswears = new List<Menswear>();
+                    while (reader.Read())
+                    {
+                        menswears.Add(GetMenswear(reader));
+                    }
+                    reader.Close();
+
                 }
-                command.CommandText = query;
-                MySqlDataReader reader = command.ExecuteReader();
-                menswears = new List<Menswear>();
-                while (reader.Read())
+                catch { }
+                finally
                 {
-                    menswears.Add(GetMenswear(reader));
+                    connection.Close();
                 }
-                reader.Close();
-            
-            }
-            catch { }
-            finally
-            {
-                connection.Close();
             }
             return menswears;
         }
