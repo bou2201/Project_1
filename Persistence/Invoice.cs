@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace Persistence
 {
+    public static class InvoiceStatus
+    {
+        public const int CREATE_NEW_INVOICE = 1;
+        public const int INVOICE_INPROGRESS = 2;
+    }
     public class Invoice
     {
         public int InvoiceNo {set; get;}

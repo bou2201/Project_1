@@ -111,7 +111,7 @@ select * from Menswears;
 select menswear_id, menswear_name,ifnull(menswear_description, '') as menswear_description,
                          menswear_material, menswear_brand, menswear_price, category_id
                         from Menswears where menswear_id=1;
-                        
+
 create table MenswearTables(
 	menswear_id int,
     size_id int,
@@ -152,7 +152,8 @@ select * from MenswearTables;
 
 create table Invoices(
 	invoice_no int auto_increment primary key,
-    order_date datetime default now() not null,
+    invoice_date datetime default now() not null,
+    invoice_status int,
     total_due double(5, 2) not null,
     customer_id int,
     seller_id int,

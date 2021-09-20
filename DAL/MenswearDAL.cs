@@ -52,7 +52,7 @@ namespace DAL
             menswear.Description = reader.GetString("menswear_description");
             menswear.Brand = reader.GetString("menswear_brand");
             menswear.Material = reader.GetString("menswear_material");
-            menswear.Price = reader.GetDouble("menswear_price");
+            menswear.Price = reader.GetDecimal("menswear_price");
             menswear.MenswearCategory = new Category();
             menswear.MenswearCategory.CategoryID = reader.GetInt32("category_id");
             return menswear;
