@@ -53,6 +53,7 @@ create table Menswears(
     menswear_brand varchar(50) not null,
     menswear_material varchar(50) not null,
     menswear_price decimal(20,2) not null,
+    amount int not null default 0,
     category_id int,
     constraint fk_category_id foreign key(category_id) references Categories(category_id)
 );
@@ -167,7 +168,7 @@ create table InvoiceDetails(
     constraint pk_detail primary key(invoice_no, menswear_id),
     constraint fk_detail_invoice foreign key(invoice_no) references Invoices(invoice_no),
     constraint fk_detail_menswear foreign key(menswear_id) references Menswears(menswear_id),
-    price double(20,2) not null,
+    menswear_price decimal(20,2) not null,
     quantity int not null
 );
 
