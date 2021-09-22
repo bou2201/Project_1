@@ -23,16 +23,33 @@ namespace DAL
                 try
                 {
                     connection.Open();
-                    query = @"select menswear_id, menswear_name, ifnull(menswear_description, '') as menswear_description,
-                        menswear_brand, menswear_material, menswear_price, category_id
-                        from Menswears where menswear_id=@menswearID;";
+                    query = @"select * from Menswears, MenswearTables, Categories, Colors, Sizes
+                                where Menswears.menswear_id = @menswearID and Menswears.menswear_id = MenswearTables.menswear_id
+								and Menswears.category_id = Categories.category_id
+                                and MenswearTables.color_id = Colors.color_id
+                                and MenswearTables.size_id = Sizes.size_id;";                   
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@menswearID", menswearID);
                     MySqlDataReader reader = command.ExecuteReader();
                     var readerRead = reader.Read();
                     if (readerRead)
                     {
-                        menswear = GetMenswear(reader);
+                        menswear = GetMenswearDetails(reader);
+                        menswear.ColorSizeList = new MenswearTable()
+                        {
+                            ColorID = new Color()
+                            {
+                                ColorID = reader.GetInt32("color_id"),
+                                ColorName = reader.GetString("color_name")
+                            },
+                            SizeID = new Size()
+                            {
+                                SizeID = reader.GetInt32("size_id"),
+                                SizeName = reader.GetString("size_name")
+                            },
+                            Quantity = reader.GetInt32("quantity")            
+                        };
+                        
                     }
                     reader.Close();
                 }
@@ -42,6 +59,22 @@ namespace DAL
                     connection.Close();
                 }
             }
+            return menswear;
+        }
+        public Menswear GetMenswearDetails(MySqlDataReader reader)
+        {
+            Menswear menswear = new Menswear();
+            menswear.MenswearID = reader.GetInt32("menswear_id");
+            menswear.MenswearName = reader.GetString("menswear_name");
+            menswear.Description = reader.GetString("menswear_description");
+            menswear.Brand = reader.GetString("menswear_brand");
+            menswear.Material = reader.GetString("menswear_material");
+            menswear.Price = reader.GetDecimal("menswear_price");
+            menswear.MenswearCategory = new Category()
+            {                
+                CategoryID = reader.GetInt32("category_id"),
+                CategoryName = reader.GetString("category_name")
+            };            
             return menswear;
         }
         public Menswear GetMenswear(MySqlDataReader reader)
@@ -72,6 +105,7 @@ namespace DAL
                             query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,
                                 ifnull(menswear_description, '') as menswear_description
                                 from Menswears";
+                            
                             break;
                         case MenswearFilter.FILTER_BY_NAME:
                             query = @"select menswear_id, menswear_name, menswear_material, menswear_brand, menswear_price, category_id,

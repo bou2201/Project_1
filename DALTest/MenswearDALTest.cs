@@ -1,7 +1,6 @@
 using Xunit;
 using Persistence;
 using DAL;
-using System.Collections.Generic;
 
 namespace DALTest
 {

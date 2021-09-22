@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Persistence
 {   
@@ -12,6 +13,7 @@ namespace Persistence
         public string Material {set; get;}
         public string Description {set; get;}
         public string Brand {set; get;}
-        public MenswearTable[] ColorSizeList {set; get;}
+        // public MenswearTable[] ColorSizeList {set; get;}
+        public MenswearTable ColorSizeList {set; get;}
     }
 }

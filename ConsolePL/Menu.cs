@@ -19,7 +19,10 @@ namespace ConsoleAppPL
         {
             int choice, choose;
             MenswearBL menswearBL = new MenswearBL();
+            InvoiceBL invoiceBL = new InvoiceBL();
+            CustomerBL customerBL = new CustomerBL();
             List<Menswear> menswears;
+            // List<MenswearTable> menswearTables = new List<MenswearTable>();
             string title = "|\t\tMAIN MENU\t\t|";
             string[] mainMenu = new string[] { "SEARCH", "EXIT" };
             string[] searchMenu = new string[] { "SEARCH MENSWEAR BY ID", "SEARCH MENSWEAR BY NAME", "SHOW ALL MENSWEAR", "BACK TO MAIN MENU" };
@@ -56,7 +59,10 @@ namespace ConsoleAppPL
                                                 Console.WriteLine($" Brand: {mens.Brand}");
                                                 Console.WriteLine($" Material: {mens.Material}");
                                                 Console.WriteLine($" Price: {mens.Price}");
-                                                Console.WriteLine($" Category: {mens.MenswearCategory.CategoryID}");
+                                                Console.WriteLine($" Category: {mens.MenswearCategory.CategoryName}");                                                
+                                                Console.WriteLine($" Color: {mens.ColorSizeList.ColorID.ColorName}");
+                                                Console.WriteLine($" Size: {mens.ColorSizeList.SizeID.SizeName}");
+                                                Console.WriteLine($" Quantity: {mens.ColorSizeList.Quantity}");                                                
                                                 GetLineDash();
                                             }
                                             else
@@ -84,6 +90,40 @@ namespace ConsoleAppPL
                                 case 3:
                                     menswears = menswearBL.GetAll();
                                     ShowListMenswear(menswears);
+                                    int input;
+                                    do
+                                    {
+                                        Console.Write("Enter '1' to order, '2' to exit");
+                                        int.TryParse(Console.ReadLine(), out input);
+                                        switch (input)
+                                        {
+                                            case 1:
+                                                Invoice invoice = new Invoice();
+                                                Customer customer = new Customer();
+                                                Console.Write("\nInput Menswear ID: ");
+                                                int mensId;
+                                                if (int.TryParse(Console.ReadLine(), out mensId))
+                                                {
+                                                    Menswear mens = menswearBL.SearchByID(mensId);
+                                                    if (mens == null)
+                                                    {
+                                                        Console.WriteLine($"ID: {mensId} doesn't exist");
+                                                    }
+                                                    else
+                                                    {                                                        
+                                                        Console.Write("\nInput Quantity: ");
+                                                        mens.Amount = int.Parse(Console.ReadLine());
+                                                        
+                                                    }
+                                                }
+                                                break;
+                                            case 2:
+                                                break;
+                                            default:
+                                                Console.WriteLine("Invalid choice!");
+                                                break;
+                                        }
+                                    } while (input != 2);
                                     break;
                                 case 4:
                                     break;

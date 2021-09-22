@@ -108,11 +108,7 @@ insert into Menswears(menswear_name, menswear_description, menswear_brand, mensw
                          'SSSTUTTER', 'cotton', '249000', 2),
                         ('Short Kaki Nuguri', 'Pants designed for style, comfort. Flat zip pockets, sophisticated branding and durable drawstring waistband.',
                          'DEGREY', 'cotton', '149000', 2);
-select * from Menswears;    
-select menswear_id, menswear_name,ifnull(menswear_description, '') as menswear_description,
-                         menswear_material, menswear_brand, menswear_price, category_id
-                        from Menswears where menswear_id=1;
-
+		
 create table MenswearTables(
 	menswear_id int,
     size_id int,
@@ -171,6 +167,31 @@ create table InvoiceDetails(
     menswear_price decimal(20,2) not null,
     quantity int not null
 );
+
+select menswear_id, menswear_name,ifnull(menswear_description, '') as menswear_description,
+                         menswear_material, menswear_brand, menswear_price, category_id
+                        from Menswears where menswear_id=1;
+select *from Menswears, Categories where Menswears.category_id = Categories.category_id;
+
+select * from Menswears, MenswearTables, Categories, Colors, Sizes
+where Menswears.menswear_id = 1 and Menswears.menswear_id = MenswearTables.menswear_id
+								and Menswears.category_id = Categories.category_id
+                                and MenswearTables.color_id = Colors.color_id
+                                and MenswearTables.size_id = Sizes.size_id;
+                                
+select * from Menswears, MenswearTables, Categories
+where Menswears.menswear_id = 1 and Menswears.menswear_id = MenswearTables.menswear_id
+								and Menswears.category_id = Categories.category_id;
+                                
+                                select * from Menswears, Categories 
+                            where Menswears.menswear_id = 1
+                            and Menswears.category_id = Categories.category_id;
+                                
+select * from MenswearTables, Sizes, Colors
+where MenswearTables.menswear_id = 1
+and MenswearTables.size_id = Sizes.size_id
+and MenswearTables.color_id = Colors.color_id;
+
 
 
 
