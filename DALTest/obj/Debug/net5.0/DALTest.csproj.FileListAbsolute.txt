@@ -245,3 +245,4 @@ D:\PROJECT1\PRO1\Project_1\DALTest\obj\Debug\net5.0\DALTest.dll
 D:\PROJECT1\PRO1\Project_1\DALTest\obj\Debug\net5.0\ref\DALTest.dll
 D:\PROJECT1\PRO1\Project_1\DALTest\obj\Debug\net5.0\DALTest.pdb
 D:\PROJECT1\PRO1\Project_1\DALTest\obj\Debug\net5.0\DALTest.genruntimeconfig.cache
+D:\PROJECT1\PRO1\Project_1\DALTest\bin\Debug\net5.0\xunit.runner.json

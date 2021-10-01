@@ -11,12 +11,13 @@ namespace Persistence
     public class Invoice
     {
         public int InvoiceNo {set; get;}
-        public double TotalDue {set; get;}
-        public DateTime OrderDate {set; get;}
+        public decimal TotalDue {set; get;}
+        public DateTime InvoiceDate {set; get;}
         public Customer CustomerInfo {set; get;}
         public Seller SellerInfo {set; get;}
-        public List<Menswear> ListMenswear {set; get;}
-      
+        public List<Menswear> ListMenswear  {set; get;}
+
+        
         public Menswear this[int index]
         {
             get
@@ -33,6 +34,7 @@ namespace Persistence
         public Invoice()
         {
             ListMenswear = new List<Menswear>();
+            CustomerInfo = new Customer();
         }
     }
 }

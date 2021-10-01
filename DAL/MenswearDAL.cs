@@ -24,7 +24,8 @@ namespace DAL
                 {
                     connection.Open();
                     query = @"select * from Menswears, MenswearTables, Categories, Colors, Sizes
-                                where Menswears.menswear_id = @menswearID and Menswears.menswear_id = MenswearTables.menswear_id
+                                where Menswears.menswear_id = @menswearID 
+                                and Menswears.menswear_id = MenswearTables.menswear_id
 								and Menswears.category_id = Categories.category_id
                                 and MenswearTables.color_id = Colors.color_id
                                 and MenswearTables.size_id = Sizes.size_id;";                   

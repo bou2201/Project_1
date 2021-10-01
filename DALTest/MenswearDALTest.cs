@@ -23,7 +23,7 @@ namespace DALTest
 
         [Theory]
         [InlineData(0)]
-        [InlineData(50)]
+        [InlineData(75)]
         [InlineData(100)]
         public void SearchByID_Test2(int id)
         {

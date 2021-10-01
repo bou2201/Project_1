@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj": {}
+    "D:\\PROJECT1\\PRO1\\Project_1\\daltest\\DALTest.csproj": {}
   },
   "projects": {
-    "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj": {
+    "D:\\PROJECT1\\PRO1\\Project_1\\daltest\\DALTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj",
+        "projectUniqueName": "D:\\PROJECT1\\PRO1\\Project_1\\daltest\\DALTest.csproj",
         "projectName": "DALTest",
-        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\DALTest.csproj",
+        "projectPath": "D:\\PROJECT1\\PRO1\\Project_1\\daltest\\DALTest.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\DALTest\\obj\\",
+        "outputPath": "D:\\PROJECT1\\PRO1\\Project_1\\daltest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,71 +1,107 @@
 ﻿using System;
 using Persistence;
 using BL;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ConsoleAppPL
 {
     class Program
     {
+        private static Style style = new Style();
         static void Main(string[] args)
-        {
+        {            
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
             Seller seller = new Seller();
             SellerBL bl = new SellerBL();
-            while (true)
+            ConsoleKey key;
+            do
             {
-                Menu.GetLineDash();
-                Console.WriteLine("|\t\t LOGIN\t\t\t|");
-                Menu.GetLineDash();
-                Console.Write("Username: ");
-                seller.Username = Console.ReadLine();
-                Console.Write("Password: ");
+                // Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Clear();
+                Console.WriteLine(" ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐");
+                Console.WriteLine(" │                               ╔╦╗┌─┐┌┐┌┌─┐┬ ┬┌─┐┌─┐┬─┐  ╔═╗┌┬┐┌─┐┬─┐┌─┐                          │");
+                Console.WriteLine(" │                        ♦      ║║║├┤ │││└─┐│││├┤ ├─┤├┬┘  ╚═╗ │ │ │├┬┘├┤      ♦                    │");                
+                Console.WriteLine(" │                               ╩ ╩└─┘┘└┘└─┘└┴┘└─┘┴ ┴┴└─  ╚═╝ ┴ └─┘┴└─└─┘                          │");                
+                Console.WriteLine(" ╞──────────────────────────────────────────────────────────────────────────────────────────────────╡");                
+                Console.WriteLine(" │                                           ♦     LOGIN     ♦                                      │");
+                Console.WriteLine(" ╞──────────────────────────────────────────────────────────────────────────────────────────────────╡");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" │                       ┌──────────────────────────────────────────────────┐                       │");
+                Console.WriteLine(" │                       │ ► Username :                                     │                       │");
+                Console.WriteLine(" │                       └──────────────────────────────────────────────────┘                       │");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" │                       ┌──────────────────────────────────────────────────┐                       │");
+                Console.WriteLine(" │                       │ ► Password :                                     │                       │");
+                Console.WriteLine(" │                       └──────────────────────────────────────────────────┘                       │");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" │                                                                                                  │");
+                Console.WriteLine(" └──────────────────────────────────────────────────────────────────────────────────────────────────┘");
+                
+                seller.Username = GetUsername();
                 seller.Password = GetPassword();
-                Console.WriteLine();
+                // seller.Username = "admin1";
+                // seller.Password = "Menswear22@";
+                                                               
                 bool login = bl.Login(seller);
-                string input;
-
-                if (login == false)
+                if(login == false)
                 {
-                    Menu.GetLineDash();
-                    Console.WriteLine("INVALID USERNAME OR PASSWORD !");
-                    while (true)
-                    {
-                        Console.Write("Input 1 to continue re-enter or input 0 to exit: ");
-                        input = Console.ReadLine();
-                        switch (input)
-                        {
-                            case "1": 
-                                break;
-                            case "0": 
-                                return;
-                            default:
-                                Console.WriteLine("Invalid choice !");
-                                break;
-                        }
-                        if (input == "1")
-                        {
-                            break;
-                        }
-                    }
+                    Console.SetCursorPosition(35, 16);
+                    style.TextColor(" ▲ Invalid Username Or Password !", ConsoleColor.Red);
+                    Console.SetCursorPosition(26, 17);
+                    style.TextColor(" ▲ Press Any Key To Continue Or 'Escape' To Exit !", ConsoleColor.Red);
                 }
                 else
                 {
-                    Menu.GetLineDash();
-                    Console.WriteLine("LOGIN TO THE SYSTEM SUCCESSFULLY !");
-                    Menu.MainMenu();
-                    return;
+                    Menu menu = new Menu();
+                    menu.MainMenu(seller);
+                    break;
                 }
-            }
+                
+                var keyInfo = Console.ReadKey(intercept: true);
+                key = keyInfo.Key;
+                if(key == ConsoleKey.Escape){
+                    break;
+                }
+                Console.WriteLine();
+            } while (key != ConsoleKey.Escape);
+        }
+
+        static string GetUsername()
+        {
+            Console.SetCursorPosition(40, 9);
+            var username = string.Empty;
+            ConsoleKey key;
+            do
+            {
+                var keyInfo = Console.ReadKey(intercept: true);
+                key = keyInfo.Key;
+                if (key == ConsoleKey.Backspace && username.Length > 0)
+                {
+                    Console.Write("\b \b");
+                    username = username[0..^1];
+                }
+                else if (!char.IsControl(keyInfo.KeyChar))
+                {
+                    Console.Write(keyInfo.KeyChar);
+                    username += keyInfo.KeyChar;
+                }
+            } while (key != ConsoleKey.Enter);
+            return username;
         }
 
         static string GetPassword()
         {
+            Console.SetCursorPosition(40, 13);
             var pass = string.Empty;
             ConsoleKey key;
             do
             {
                 var keyInfo = Console.ReadKey(intercept: true);
                 key = keyInfo.Key;
-
                 if (key == ConsoleKey.Backspace && pass.Length > 0)
                 {
                     Console.Write("\b \b");

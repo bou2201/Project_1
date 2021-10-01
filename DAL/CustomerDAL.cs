@@ -14,22 +14,25 @@ namespace DAL
         public Customer GetById(int customerId)
         {
             Customer customer = new Customer();
-            try
+            lock (connection)
             {
-                connection.Open();
-                query = @"select customer_id, customer_name, customer_phone 
-                        from Customers where customer_id=" + customerId + ";";
-                reader = (new MySqlCommand(query, connection)).ExecuteReader();
-                if (reader.Read())
+                try
                 {
-                    customer = GetCustomer(reader);
+                    connection.Open();
+                    query = @"select customer_id, customer_name, customer_phone 
+                        from Customers where customer_id=" + customerId + ";";
+                    reader = (new MySqlCommand(query, connection)).ExecuteReader();
+                    if (reader.Read())
+                    {
+                        customer = GetCustomer(reader);
+                    }
+                    reader.Close();
                 }
-                reader.Close();
-            }
-            catch { }
-            finally
-            {
-                connection.Close();
+                catch { }
+                finally
+                {
+                    connection.Close();
+                }
             }
             return customer;
         }
@@ -46,27 +49,30 @@ namespace DAL
         public int? AddCustomer(Customer customer)
         {
             int? result = null;
-            if (connection.State == System.Data.ConnectionState.Closed)
+            lock (connection)
             {
-                connection.Open();
-            }
-            MySqlCommand command = new MySqlCommand("", connection);
-            try
-            {
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@customerName", customer.CustomerName);
-                command.Parameters["@customerName"].Direction = System.Data.ParameterDirection.Input;
-                command.Parameters.AddWithValue("@phoneNumber", customer.PhoneNumber);
-                command.Parameters["@phoneNumber"].Direction = System.Data.ParameterDirection.Input;
-                command.Parameters.AddWithValue("@customerId", MySqlDbType.Int32);
-                command.Parameters["@customerId"].Direction = System.Data.ParameterDirection.Output;
-                command.ExecuteNonQuery();
-                result = (int)command.Parameters["@customerId"].Value;
-            }
-            catch { }
-            finally
-            {
-                connection.Close();
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                MySqlCommand command = new MySqlCommand("", connection);
+                try
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@customerName", customer.CustomerName);
+                    command.Parameters["@customerName"].Direction = System.Data.ParameterDirection.Input;
+                    command.Parameters.AddWithValue("@phoneNumber", customer.PhoneNumber);
+                    command.Parameters["@phoneNumber"].Direction = System.Data.ParameterDirection.Input;
+                    command.Parameters.AddWithValue("@customerId", MySqlDbType.Int32);
+                    command.Parameters["@customerId"].Direction = System.Data.ParameterDirection.Output;
+                    command.ExecuteNonQuery();
+                    result = (int)command.Parameters["@customerId"].Value;
+                }
+                catch { }
+                finally
+                {
+                    connection.Close();
+                }
             }
             return result;
         }
