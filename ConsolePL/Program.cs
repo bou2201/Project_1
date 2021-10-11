@@ -1,24 +1,19 @@
 ﻿using System;
 using Persistence;
 using BL;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace ConsoleAppPL
 {
     class Program
     {
-        private static Style style = new Style();
         static void Main(string[] args)
         {            
-            Console.InputEncoding = System.Text.Encoding.Unicode;
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
             Seller seller = new Seller();
-            SellerBL bl = new SellerBL();
+            SellerBL sellerBL = new SellerBL();
+            Style style = new Style();
             ConsoleKey key;
             do
             {
-                // Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Clear();
                 Console.WriteLine(" ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐");
                 Console.WriteLine(" │                               ╔╦╗┌─┐┌┐┌┌─┐┬ ┬┌─┐┌─┐┬─┐  ╔═╗┌┬┐┌─┐┬─┐┌─┐                          │");
@@ -29,11 +24,11 @@ namespace ConsoleAppPL
                 Console.WriteLine(" ╞──────────────────────────────────────────────────────────────────────────────────────────────────╡");
                 Console.WriteLine(" │                                                                                                  │");
                 Console.WriteLine(" │                       ┌──────────────────────────────────────────────────┐                       │");
-                Console.WriteLine(" │                       │ ► Username :                                     │                       │");
+                Console.WriteLine(" │                       │ ► Username:                                      │                       │");
                 Console.WriteLine(" │                       └──────────────────────────────────────────────────┘                       │");
                 Console.WriteLine(" │                                                                                                  │");
                 Console.WriteLine(" │                       ┌──────────────────────────────────────────────────┐                       │");
-                Console.WriteLine(" │                       │ ► Password :                                     │                       │");
+                Console.WriteLine(" │                       │ ► Password:                                      │                       │");
                 Console.WriteLine(" │                       └──────────────────────────────────────────────────┘                       │");
                 Console.WriteLine(" │                                                                                                  │");
                 Console.WriteLine(" │                                                                                                  │");
@@ -46,8 +41,8 @@ namespace ConsoleAppPL
                 // seller.Username = "admin1";
                 // seller.Password = "Menswear22@";
                                                                
-                bool login = bl.Login(seller);
-                if(login == false)
+                Seller _seller = sellerBL.Login(seller);
+                if(_seller == null)
                 {
                     Console.SetCursorPosition(35, 16);
                     style.TextColor(" ▲ Invalid Username Or Password !", ConsoleColor.Red);
@@ -57,10 +52,9 @@ namespace ConsoleAppPL
                 else
                 {
                     Menu menu = new Menu();
-                    menu.MainMenu(seller);
+                    menu.SellerMenu(_seller);
                     break;
-                }
-                
+                }                
                 var keyInfo = Console.ReadKey(intercept: true);
                 key = keyInfo.Key;
                 if(key == ConsoleKey.Escape){
@@ -69,10 +63,9 @@ namespace ConsoleAppPL
                 Console.WriteLine();
             } while (key != ConsoleKey.Escape);
         }
-
         static string GetUsername()
         {
-            Console.SetCursorPosition(40, 9);
+            Console.SetCursorPosition(39, 9);
             var username = string.Empty;
             ConsoleKey key;
             do
@@ -95,7 +88,7 @@ namespace ConsoleAppPL
 
         static string GetPassword()
         {
-            Console.SetCursorPosition(40, 13);
+            Console.SetCursorPosition(39, 13);
             var pass = string.Empty;
             ConsoleKey key;
             do

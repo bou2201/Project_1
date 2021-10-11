@@ -9,16 +9,15 @@ namespace Persistence
         public string MenswearName {set; get;}
         public Category MenswearCategory {set; get;}
         public decimal Price {set; get;}
-        public int? Amount {set; get;}
+        public int Quantity {set; get;}
         public string Material {set; get;}
         public string Description {set; get;}
         public string Brand {set; get;}
-        // public MenswearTable[] ColorSizeList {set; get;}
         public MenswearTable ColorSizeList {set; get;}
 
         public string MenswearInfo
         {
-            get {return string.Format("| {0, -41} |    {1, 2} |", MenswearName, Price);}
+            get {return string.Format("| {0, -41} |    {1:N0} ", MenswearName, Price);}
         }
         public Menswear()
         {

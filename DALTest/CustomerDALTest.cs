@@ -27,14 +27,13 @@ namespace DALTest
         [InlineData(100)]
         [InlineData(156)]
         [InlineData(4483)]
-        [InlineData(36)]
-        [InlineData(15)]
+        [InlineData(200)]
+        [InlineData(3555)]
         public void GetCustomerID_TestFalse(int customer_id)
         {
             customer.CustomerID = customer_id;
             var result = customerDAL.GetById(customer_id);
-            Assert.False(result.CustomerID == customer_id);
-            Assert.False(result.CustomerID != null);
+            Assert.False(result != null);            
         }
     }
 }

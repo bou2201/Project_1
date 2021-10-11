@@ -15,8 +15,7 @@ namespace Persistence
         public DateTime InvoiceDate {set; get;}
         public Customer CustomerInfo {set; get;}
         public Seller SellerInfo {set; get;}
-        public List<Menswear> ListMenswear  {set; get;}
-
+        public List<Menswear> ListMenswear {set; get;}
         
         public Menswear this[int index]
         {
@@ -35,6 +34,7 @@ namespace Persistence
         {
             ListMenswear = new List<Menswear>();
             CustomerInfo = new Customer();
+            InvoiceDate = DateTime.Now;
         }
     }
 }

@@ -7,9 +7,9 @@ namespace DAL
     public class SellerDAL
     {
         MySqlConnection connection = DbConfig.GetConnection();
-        public bool Login(Seller seller)
+        public Seller Login(Seller seller)
         {
-            bool check = false;
+            Seller _seller = null;
             lock (connection)
             {
                 try
@@ -22,17 +22,21 @@ namespace DAL
                     MySqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                        check = true;
+                        _seller = GetSeller(reader);
                     }
                     reader.Close();
-                    connection.Close();                   
+                    connection.Close();
                 }
-                catch
-                {
-                    check = false;
-                }
+                catch{}
             }
-            return check;
+            return _seller;
+        }
+        internal Seller GetSeller(MySqlDataReader reader)
+        {
+            Seller seller = new Seller();
+            seller.SellerID = reader.GetInt32("seller_id");
+            seller.SellerName = reader.GetString("seller_name");
+            return seller;
         }
     }
 }

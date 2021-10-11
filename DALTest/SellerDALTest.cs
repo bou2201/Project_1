@@ -11,12 +11,12 @@ namespace DALTest
         private Seller seller = new Seller();
 
         [Fact]
-        public void LoginTest1()
+        public void Login_TestTrue()
         {
             seller.Username = "admin1";
             seller.Password = "Menswear22@";
             var result = dal.Login(seller);
-            Assert.True(result);
+            Assert.True(result != null);
         }
 
         [Theory]
@@ -24,12 +24,12 @@ namespace DALTest
         [InlineData("admin2", "menswear@")]
         [InlineData("", "Menswear22@")]
         [InlineData("", "")]
-        public void LoginTest2(string Username, string Password)
+        public void Login_TestFalse(string Username, string Password)
         {
             seller.Username = Username;
             seller.Password = Password;
             var result = dal.Login(seller);
-            Assert.False(result);
+            Assert.False(result != null);
         }
     }
 }

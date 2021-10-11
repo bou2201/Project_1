@@ -62,7 +62,7 @@ namespace DAL
             }
             return menswear;
         }
-        public Menswear GetMenswearDetails(MySqlDataReader reader)
+        internal Menswear GetMenswearDetails(MySqlDataReader reader)
         {
             Menswear menswear = new Menswear();
             menswear.MenswearID = reader.GetInt32("menswear_id");
@@ -78,7 +78,7 @@ namespace DAL
             };            
             return menswear;
         }
-        public Menswear GetMenswear(MySqlDataReader reader)
+        internal Menswear GetMenswear(MySqlDataReader reader)
         {
             Menswear menswear = new Menswear();
             menswear.MenswearID = reader.GetInt32("menswear_id");
@@ -132,6 +132,42 @@ namespace DAL
                 }
             }
             return menswears;
+        }
+
+        public List<Menswear> GetPriceByID(int invoiceId)
+        {
+            var menswears = new List<Menswear>();
+            try
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand("", connection);
+                var query = @$"select * from InvoiceDetails id 
+                            left join Menswears ms 
+                            on id.menswear_id = ms.menswear_id 
+                            where id.invoice_no = {invoiceId};";
+                command.CommandText = query;
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    menswears.Add(GetPrice(reader));
+                }
+                reader.Close();
+            }
+            catch {}
+            finally
+            {
+                connection.Close();
+            }
+            return menswears;
+        }
+
+        internal Menswear GetPrice(MySqlDataReader reader)
+        {
+            Menswear newMenswear = new Menswear();
+            newMenswear.MenswearID =  reader.GetInt32("menswear_id");
+            newMenswear.Quantity =  reader.GetInt32("quantity");
+            newMenswear.Price = reader.GetDecimal("menswear_price");
+            return newMenswear;
         }
     }
 }

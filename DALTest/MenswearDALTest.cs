@@ -12,8 +12,10 @@ namespace DALTest
         [Theory]
         [InlineData(1)]
         [InlineData(5)]        
+        [InlineData(12)]        
         [InlineData(25)]        
-        public void SearchByID_Test1(int id)
+        [InlineData(50)]        
+        public void SearchByID_TestTrue(int id)
         {
             menswear.MenswearID = id;
             var result = menswearDAL.SearchByID(id);
@@ -24,8 +26,10 @@ namespace DALTest
         [Theory]
         [InlineData(0)]
         [InlineData(75)]
+        [InlineData(513)]
         [InlineData(100)]
-        public void SearchByID_Test2(int id)
+        [InlineData(99)]
+        public void SearchByID_TestFalse(int id)
         {
             menswear.MenswearID = id;
             var result = menswearDAL.SearchByID(id);
@@ -38,7 +42,7 @@ namespace DALTest
         [InlineData("T-Shirt ABS")]
         [InlineData("Tanktop 2019")] 
         [InlineData("Jean Balance")]        
-        public void SearchByName_Test1(string name)
+        public void SearchByName_TestTrue(string name)
         {
             menswear.MenswearName = name;
             var result = menswearDAL.SearchByName(1, menswear);
@@ -51,11 +55,21 @@ namespace DALTest
         [InlineData("Ao rach")]
         [InlineData("Ao tang hinh")]
         [InlineData("Quan rach")] 
-        public void SearchByName_Test2(string name)
+        public void SearchByName_TestFalse(string name)
         {
             menswear.MenswearName = name;
             var result = menswearDAL.SearchByName(1, menswear);
             Assert.DoesNotContain(result, menswear => menswear.MenswearName == name);
-        }    
+        }   
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void GetPriceByID_Test(int id)
+        {            
+            var result = menswearDAL.GetPriceByID(id);
+            Assert.True(result != null);     
+        }
     }
 }

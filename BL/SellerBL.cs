@@ -7,7 +7,8 @@ namespace BL
     public class SellerBL
     {
         private SellerDAL dal = new SellerDAL();
-        public bool Login(Seller seller){
+        
+        public Seller Login(Seller seller){
             return dal.Login(seller);
         }
     }

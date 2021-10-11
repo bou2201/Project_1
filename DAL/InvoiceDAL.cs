@@ -7,16 +7,17 @@ namespace DAL
 {
     public class InvoiceDAL
     {
+        private string query;
         private MySqlConnection connection = DbConfig.GetConnection();
         public bool CreateInvoice(Invoice invoice)
         {
+            if (invoice == null || invoice.ListMenswear == null || invoice.ListMenswear.Count == 0)
+            {
+                return false;
+            }
             bool result = false;
             lock (connection)
             {
-                if (invoice == null || invoice.ListMenswear == null || invoice.ListMenswear.Count == 0)
-                {
-                    return false;
-                }
                 try
                 {
                     connection.Open();
@@ -75,7 +76,7 @@ namespace DAL
                         command.Parameters.AddWithValue("@invoiceStatus", InvoiceStatus.CREATE_NEW_INVOICE);
                         command.ExecuteNonQuery();
                         //get new Invoice_no
-                        command.CommandText = "select LAST_INSERT_ID() as invoice_no";
+                        command.CommandText = "select LAST_INSERT_ID() as invoice_no;";
                         reader = command.ExecuteReader();
                         if (reader.Read())
                         {
@@ -106,10 +107,8 @@ namespace DAL
                             command.CommandText = @"insert into InvoiceDetails(invoice_no, menswear_id, total_due, quantity) values 
                             (" + invoice.InvoiceNo + ", " + menswear.MenswearID + ", " + menswear.Price + ", " + menswear.ColorSizeList.Quantity + ");";
                             command.ExecuteNonQuery();
-                            // sai cai price hay sao nho
-                            //update amount in Menswears
-                            // bảng này làm gì có quantity
-                            
+
+                            //update quantity in MenswearTables                            
                             command.CommandText = "update MenswearTables set quantity=quantity-@quantity where menswear_id=" + menswear.MenswearID + ";";
                             command.Parameters.Clear();
                             command.Parameters.AddWithValue("@quantity", menswear.ColorSizeList.Quantity);
@@ -119,7 +118,7 @@ namespace DAL
                         transaction.Commit();
                         result = true;
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         try
                         {
@@ -145,6 +144,46 @@ namespace DAL
                 }
             }
             return result;
+        }
+        public List<Invoice> GetListInvoice(Invoice invoice)
+        {
+            List<Invoice> invoices = null;
+            lock (connection)
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand("", connection);
+                    // query = @"select * from Invoices i, Customers 
+                    //         where Customers.customer_id = i.customer_id and i.seller_id is not null ;";
+                    query = @"select * from Invoices i, Customers 
+                            where Customers.customer_id = i.customer_id;"; 
+                    command.CommandText = query;
+                    MySqlDataReader reader = command.ExecuteReader();
+                    invoices = new List<Invoice>();
+                    while (reader.Read())
+                    {
+                        invoices.Add(GetInvoice(reader));
+                    }
+                    reader.Close();
+
+                }
+                catch { }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return invoices;
+        }
+        internal Invoice GetInvoice(MySqlDataReader reader)
+        {
+            Invoice invoice = new Invoice();
+            invoice.InvoiceNo = reader.GetInt32("invoice_no");
+            invoice.InvoiceDate = reader.GetDateTime("invoice_date");
+            invoice.CustomerInfo.CustomerName = reader.GetString("customer_name");
+            invoice.CustomerInfo.PhoneNumber = reader.GetString("customer_phone");
+            return invoice;
         }
     }
 }

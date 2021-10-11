@@ -10,10 +10,5 @@ namespace BL
         {
             return customerDAL.GetById(customerId);
         }
-
-        public int AddCustomer(Customer customer)
-        {
-            return customerDAL.AddCustomer(customer) ?? 0;
-        }
     }
 }

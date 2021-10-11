@@ -1,12 +1,10 @@
 using System;
-using System.Text;
-
 
 namespace ConsoleAppPL
 {
     public class Style
     {
-        public void WriteAt(string text, int x_left, int y_top)
+        public void PrintPosition(string text, int x_left, int y_top)
         {
             try
             {
@@ -19,7 +17,7 @@ namespace ConsoleAppPL
             }
         }
 
-        public void ClearAt(int x_letf, int x_right, int y_top, int y_bott)
+        public void ClearPosition(int x_letf, int x_right, int y_top, int y_bott)
         {
             int row = y_bott - y_top;
             int column = x_right - x_letf;
@@ -29,18 +27,7 @@ namespace ConsoleAppPL
                 Console.Write(new string(' ', column)); 
             }
         }
-        public bool StringExists(string key, string[] keys){
-            bool result = false;;
-            int count = keys.Length;
-            for(int i = 0; i < count; i++){
-                if(keys[i].ToUpper() == key.ToUpper()){
-                    result = true;
-                    break;
-                }
-            }
-            return result;
-        }
-
+        
         public string ReadString(){
             var result = string.Empty;
             ConsoleKey key;
