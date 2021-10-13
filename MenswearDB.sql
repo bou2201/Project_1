@@ -40,7 +40,6 @@ create table Menswears(
     menswear_brand varchar(50) not null,
     menswear_material varchar(50) not null,
     menswear_price decimal not null,
-    quantity int not null default 0,
     category_id int,
     constraint fk_category_id foreign key(category_id) references Categories(category_id)
 );
