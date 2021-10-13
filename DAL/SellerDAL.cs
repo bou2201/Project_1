@@ -6,7 +6,7 @@ namespace DAL
 {
     public class SellerDAL
     {
-        MySqlConnection connection = DbConfig.GetConnection();
+        private MySqlConnection connection = DbConfig.GetConnection();
         public Seller Login(Seller seller)
         {
             Seller _seller = null;

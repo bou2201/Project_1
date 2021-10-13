@@ -378,7 +378,7 @@ namespace ConsoleAppPL
                 }
                 style.PrintPosition(string.Format("----------------------------------------------------------------"), 18, y++);
 
-                ChangePage(1, 29, current_page + 1, max_page);
+                ChangePage(1, 29, current_page+1, max_page);
 
                 style.PrintPosition("► Your Choice: ", 3, 31);
                 choice = style.ReadString();

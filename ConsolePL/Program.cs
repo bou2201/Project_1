@@ -7,7 +7,9 @@ namespace ConsoleAppPL
     class Program
     {
         static void Main(string[] args)
-        {            
+        {    
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
             Seller seller = new Seller();
             SellerBL sellerBL = new SellerBL();
             Style style = new Style();

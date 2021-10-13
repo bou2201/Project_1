@@ -6,10 +6,9 @@ namespace BL
 {
     public class SellerBL
     {
-        private SellerDAL dal = new SellerDAL();
-        
+        private SellerDAL sellerDAL = new SellerDAL();
         public Seller Login(Seller seller){
-            return dal.Login(seller);
+            return sellerDAL.Login(seller);
         }
     }
 }

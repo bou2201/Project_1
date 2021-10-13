@@ -19,9 +19,9 @@ namespace DALTest
                 SellerInfo = new Seller { SellerID = 1},
                 ListMenswear =
                 {
-                    new Menswear { MenswearID = 15, ColorSizeList = new MenswearTable() {Quantity = 2}},
-                    new Menswear { MenswearID = 23, ColorSizeList = new MenswearTable() {Quantity = 3}},
-                    new Menswear { MenswearID = 36, ColorSizeList = new MenswearTable() {Quantity = 4}},
+                    new Menswear { MenswearID = 15, ColorSizeList = new MenswearTable() {Quantity = 1}},
+                    new Menswear { MenswearID = 23, ColorSizeList = new MenswearTable() {Quantity = 1}},
+                    new Menswear { MenswearID = 36, ColorSizeList = new MenswearTable() {Quantity = 1}},
                     new Menswear { MenswearID = 32, ColorSizeList = new MenswearTable() {Quantity = 1}}
                 }
             };
@@ -90,8 +90,6 @@ namespace DALTest
         [InlineData(1, "0328482434")]
         [InlineData(2, "0123456789")]
         [InlineData(3, "0321654987")]
-        // [InlineData(4, "064251226")]
-        // [InlineData(5, "0223651936")]
         public void GetHistory_TestTrue(int invoice_no, string phoneCustomer)
         {
             invoice.InvoiceNo = invoice_no;
