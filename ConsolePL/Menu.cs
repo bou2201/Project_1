@@ -266,7 +266,7 @@ namespace ConsoleAppPL
             Console.WriteLine($"│   Customer Name  : {invoice.CustomerInfo.CustomerName,-30}                          │");
             Console.WriteLine($"│   Customer Phone : {invoice.CustomerInfo.PhoneNumber,-30}                          │");
             Console.WriteLine("│                                                                            │");
-            Console.WriteLine("│    Product                      Quantity           Price          Amount   │");
+            Console.WriteLine("│    Product                      Quantity      Price(VND)     Amount(VND)   │");
             Console.WriteLine("│ ────────────────────────────────────────────────────────────────────────── │");
             foreach (var m in invoice.ListMenswear)
             {
